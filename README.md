@@ -59,8 +59,8 @@ For full architectural details, model parameters, and prompt designs, refer to [
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd "Inter IIT ML"
+git clone https://github.com/sumith3629-afk/Meeting-summarizer.git
+cd Meeting-summarizer
 ```
 
 ### 2. Set up a virtual environment
