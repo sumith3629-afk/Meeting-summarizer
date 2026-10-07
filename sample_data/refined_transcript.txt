@@ -1,0 +1,29 @@
+Good morning everyone. Welcome to our weekly back-end engineering sync. Today we need to address our high P99 latency spikes, review our database scaling options, and assign owners for the upcoming release.
+
+Thanks, David.
+
+Looking at our recent production telemetry, our response times degraded by 45% during peak hours. Rahul suggested yesterday that we migrate our primary data store to MongoDB, but after reviewing the consistency trade-offs, we must stick with PostgreSQL. The relational schema is critical for our transactional ledger.
+
+**Decision:** We are definitely sticking with PostgreSQL and will not migrate to MongoDB this quarter.
+
+Regarding the latency issue, what is our plan? Alex proposed rewriting our microservices communication layer from REST to gRPC. While gRPC is faster, we don’t have enough benchmark data yet to make that switch right now. Instead, adding a **readiness** cache in front of our read-heavy endpoints will immediately bring our P99 latency back under 120 milliseconds.
+
+**Action:** That makes sense. We will defer any decision on gRPC until after benchmarking. The readiness caching layer is approved.
+
+Zira, can you take ownership of implementing that readiness cache layer?
+
+**Zira:** Yes, I will implement and test the readiness cache cluster by this Friday, **October 10**.
+
+Perfect.
+
+Another item: Rahul is assigned to configure Prometheus alerts and Grafana dashboards for our Kubernetes pods before next Tuesday, **October 14**.
+
+**Understood.**
+
+Also, we noticed that our old Docker Compose configs and dead environment variables are cluttering the repository. Someone really needs to clean up the legacy Docker files and documentation, but we haven’t assigned who will do it yet.
+
+**Right.** We will figure out who handles that cleanup later.
+
+Lastly, Alex is tasked with drafting the automated load testing plan, though we haven’t fixed a deadline for that yet.
+
+Let’s wrap up here and get to work.

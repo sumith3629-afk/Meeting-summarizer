@@ -1,0 +1,46 @@
+{
+  "summary": "The weekly back-end engineering sync addressed high P99 latency spikes, database scaling options, and upcoming release tasks. Key decisions included maintaining PostgreSQL, implementing a readiness cache layer, and assigning specific tasks with deadlines. Legacy cleanup and load testing plan were noted for future assignment.",
+  "meeting_minutes": [
+    {
+      "topic": "Database Migration and Consistency Trade-offs",
+      "discussion": "Reviewed recent production telemetry showing a 45% degradation in response times during peak hours. Discussed Rahul\u2019s proposal to migrate from PostgreSQL to MongoDB, but decided to retain PostgreSQL due to critical transactional ledger requirements and consistency trade-offs."
+    },
+    {
+      "topic": "Latency Spike Mitigation",
+      "discussion": "Explored options for addressing P99 latency spikes, including Alex\u2019s proposal to switch from REST to gRPC. Deferred gRPC decision pending benchmarking. Approved adding a **readiness cache** layer for read-heavy endpoints to reduce latency below 120ms."
+    },
+    {
+      "topic": "Monitoring and Observability",
+      "discussion": "Noted the need for Prometheus alerts and Grafana dashboards for Kubernetes pods. Assigned Rahul to configure these before **October 14**."
+    },
+    {
+      "topic": "Legacy Code and Documentation Cleanup",
+      "discussion": "Identified clutter in Docker Compose configs and dead environment variables in the repository. No owner assigned yet; will address later."
+    },
+    {
+      "topic": "Upcoming Release Tasks",
+      "discussion": "Assigned Alex to draft an automated load testing plan, though no deadline was set."
+    }
+  ],
+  "key_decisions": [
+    "Stick with PostgreSQL and **not migrate to MongoDB** this quarter due to transactional ledger requirements and consistency concerns.",
+    "Implement a **readiness cache layer** for read-heavy endpoints to mitigate P99 latency spikes."
+  ],
+  "action_items": [
+    {
+      "task": "Implement and test the readiness cache cluster for read-heavy endpoints",
+      "owner": "Zira",
+      "deadline": "October 10"
+    },
+    {
+      "task": "Configure Prometheus alerts and Grafana dashboards for Kubernetes pods",
+      "owner": "Rahul",
+      "deadline": "October 14"
+    },
+    {
+      "task": "Draft the automated load testing plan",
+      "owner": "Alex",
+      "deadline": "unspecified"
+    }
+  ]
+}

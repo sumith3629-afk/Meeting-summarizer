@@ -1,0 +1,38 @@
+# Mistral AI API
+mistralai
+
+# Audio transcription
+faster-whisper
+av==18.1.0
+ffmpeg-python
+
+# RAG pipeline
+langchain
+langchain-community
+langchain-text-splitters
+langchain-mistralai
+langchain-chroma
+
+# Embeddings
+sentence-transformers
+
+# Vector database
+chromadb
+
+# Backend API
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Configuration and validation
+python-dotenv
+pydantic
+
+# UI Interface
+streamlit
+
+# Data processing and utilities
+numpy
+tqdm
+pydub
+json-repair
