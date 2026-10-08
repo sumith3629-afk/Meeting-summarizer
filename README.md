@@ -123,9 +123,6 @@ Outputs will be saved in the project root:
 ---
 
 ## 📁 Repository Structure
-
-```
-.
 ├── app.py                     # Interactive Streamlit application
 ├── main.py                    # CLI runner for headless processing
 ├── summarize.py               # LLM stages: Refinement & Meeting Documentation
@@ -143,9 +140,6 @@ Outputs will be saved in the project root:
     ├── refined_transcript.txt # Domain-refined output
     ├── meeting_record.json    # Machine-readable structured record
     └── meeting_record.md      # Human-readable markdown record
-```
-
----
 
 ## 📊 Sample Meeting Recording & Verifiable Outputs
 
@@ -160,17 +154,3 @@ You can inspect the pre-generated outputs inside `sample_data/`:
   - Tasks without explicit owners or dates show `"unspecified"`.
 - **`meeting_record.md`**: Formatted executive report with Markdown tables.
 
----
-
-## 🎥 Demonstration Video
-
-- **Demo Video Link**: `[Add your public Loom or Google Drive video link here]`
-- *The demo showcases an end-to-end run: uploading the sample recording, viewing real-time progress, reviewing the side-by-side comparison, inspecting the extracted decisions/tasks, and downloading the final artifacts.*
-
----
-
-## 👥 Submission Information
-
-- **Event**: Inter IIT Bootcamp Phase 2 - Machine Learning Problem Statement
-- **Team Size**: 1-3 Members
-- **Submission Date**: October 2026
